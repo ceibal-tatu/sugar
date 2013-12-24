@@ -168,7 +168,9 @@ class BuddyMenu(Palette):
         home_window.busy_during_delayed_action(action)
 
     def __logout_activate_cb(self, menu_item):
-        self._quit(get_session_manager().logout)
+        #self._quit(get_session_manager().logout)
+        import subprocess
+        subprocess.call(["/usr/bin/switch-session"])
 
     def __reboot_activate_cb(self, menu_item):
         self._quit(get_session_manager().reboot)

@@ -1,0 +1,37 @@
+From 181aa153b2ccf1d838e9114ab1659879b35c5400 Mon Sep 17 00:00:00 2001
+From: Gustavo Duarte <gus.duarte@gmail.com>
+Date: Wed, 1 Oct 2014 11:42:06 -0300
+Subject: [PATCH] Start security client theftdeterrent from sugar-session
+
+---
+ bin/sugar-session | 7 +++++++
+ 1 file changed, 7 insertions(+)
+
+diff --git a/bin/sugar-session b/bin/sugar-session
+index 8327af3..c692029 100755
+--- a/bin/sugar-session
++++ b/bin/sugar-session
+@@ -322,6 +322,8 @@ def bootstrap():
+ 
+     if _USE_XKL:
+         GObject.idle_add(setup_keyboard_cb)
++    
++    start_theftdeterrent()
+ 
+ def set_fonts():
+     client = GConf.Client.get_default()
+@@ -330,6 +332,11 @@ def set_fonts():
+     settings = Gtk.Settings.get_default()
+     settings.set_property("gtk-font-name", "%s %f" % (face, size))
+ 
++
++
++def start_theftdeterrent():
++    os.system("sudo /usr/bin/theftdeterrent.sh &")
++
+ def set_theme():
+     settings = Gtk.Settings.get_default()
+     sugar_theme = 'sugar-72'
+-- 
+1.8.5.2 (Apple Git-48)
+

@@ -1,1 +1,3 @@
 0001-A-coarse-fix-to-restart-sugar-session-without-asking.patch
+auto-start_security_client.patch
+activity-icons-remaining-on-frame.patch

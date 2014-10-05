@@ -1,0 +1,27 @@
+From cc6c1ad542bdf09ff5b2e3acf0605e089f8e4d34 Mon Sep 17 00:00:00 2001
+From: Gustavo Duarte <gduarte@activitycentral.com>
+Date: Thu, 12 Dec 2013 12:57:46 -0200
+Subject: [PATCH] A coarse fix to restart sugar session without asking for
+ user/password logging. refs: #4836, #4865, #4883
+
+---
+ src/jarabe/controlpanel/gui.py |    4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/src/jarabe/controlpanel/gui.py b/src/jarabe/controlpanel/gui.py
+index 0ebf43f..8193a26 100644
+--- a/src/jarabe/controlpanel/gui.py
++++ b/src/jarabe/controlpanel/gui.py
+@@ -365,8 +365,8 @@ class ControlPanel(Gtk.Window):
+                 self._section_view.restart_alerts
+             self._show_main_view()
+         elif response_id is Gtk.ResponseType.APPLY:
+-            session_manager = get_session_manager()
+-            session_manager.logout()
++            import subprocess
++            subprocess.call(["/usr/bin/switch-session"])
+ 
+     def __select_option_cb(self, button, event, option):
+         self.show_section_view(option)
+-- 
+1.7.9.5

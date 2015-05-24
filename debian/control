@@ -9,14 +9,15 @@ Build-Depends: devscripts,
  cdbs (>= 0.4.97~),
  debhelper,
  dh-buildinfo,
- libglib2.0-dev,
+ libglib2.0-dev (>= 2.32.4-0ubuntu1+tatu1),
  python-gtk2-dev,
  libgconf2-dev,
  gettext,
  intltool,
  shared-mime-info,
- libgtk-3-dev,
- python-empy
+ libgtk-3-dev (>= 3.4.2-0ubuntu0.9-tatu1),
+ python-empy,
+ python-espeak
 Standards-Version: 3.9.3
 Vcs-Git: git://git.debian.org/git/collab-maint/sugar
 Vcs-Browser: http://anonscm.debian.org/gitweb/?p=collab-maint/sugar.git

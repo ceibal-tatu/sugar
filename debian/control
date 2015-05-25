@@ -15,7 +15,7 @@ Build-Depends: devscripts,
  gettext,
  intltool,
  shared-mime-info,
- libgtk-3-dev (>= 3.4.2-0ubuntu0.9-tatu1),
+ libgtk-3-dev (>= 3.4.2-0ubuntu0.9-tatu2),
  python-empy,
  python-espeak
 Standards-Version: 3.9.3
